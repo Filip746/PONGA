@@ -25,33 +25,43 @@ constructor Start new() {
 
      do Screen.drawRectangle(  0, 251 , 511, 255 );
 
-     do Output.moveCursor(16, 16);
-   
-     do Output.printChar(key2);
-    
-     do Output.moveCursor(16 , 17);
+	do Output.moveCursor(16 , 3);
+	
+	do Output.printString(" Left Player Controls  " );
 
-     do Output.printChar(key1);
+  do Screen.setColor( true);
 
-     do Output.moveCursor(12 , 16);
-   
-     do Output.printChar(key2);
-    
-     do Output.moveCursor(12 , 17);
+  do Output.moveCursor( 16, 36);
 
-     do Output.printChar(key1);
+  do Output.printString(" Right Player Controls " );
 
-     do Output.moveCursor(16 , 20);
+  do Screen.setColor( true);
 
-     do Output.printString("Controls    -  Press   X ");
+  do Output.moveCursor(18 , 3);
 
-     do Output.moveCursor(12 , 19) ;
+  do Output.printString("PRESS   W   TO  MOVE    UP");
+
+  do Output.moveCursor(19 , 3);
+
+  do Output.printString("PRESS   S   TO  MOVE   DOWN");
+
+  do Output.moveCursor(18 , 36);
+
+  do Output.printString("PRESS  UP  TO  MOVE   UP");
+
+  do Output.moveCursor(19 , 36);
+
+  do Output.printString("PRESS DOWN TO  MOVE  DOWN");
+
+
+
+     do Output.moveCursor(12 , 18) ;
 
      do Output.printString(" Start Game  -  Press Space");
 
-     do Output.moveCursor(8 , 21) ;
+     do Output.moveCursor(8 , 23) ;
 
-     do Output.printString("  The Ping Pong Game  " );
+     do Output.printString(" <== Pong Game ==> " );
 
      do Screen.setColor( true);
 
