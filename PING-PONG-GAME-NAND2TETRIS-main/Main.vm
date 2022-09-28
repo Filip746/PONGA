@@ -1,0 +1,58 @@
+function Main.main 5
+push constant 0
+not
+pop local 4
+call Start.new 0
+pop local 1
+label WHILE_EXP0
+push local 4
+not
+if-goto WHILE_END0
+call Keyboard.keyPressed 0
+pop local 3
+push local 3
+push constant 129
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+call Screen.clearScreen 0
+pop temp 0
+push local 1
+call Start.dispose 1
+pop temp 0
+call Start.new 0
+pop local 1
+goto IF_END0
+label IF_FALSE0
+push local 3
+push constant 32
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+call Screen.clearScreen 0
+pop temp 0
+push local 0
+call Game.newInstance 1
+pop temp 0
+call Game.getInstance 0
+pop local 0
+push local 0
+call Game.run 1
+pop temp 0
+push local 0
+call Game.dispose 1
+pop temp 0
+label IF_FALSE1
+label IF_END0
+goto WHILE_EXP0
+label WHILE_END0
+push local 1
+call Start.dispose 1
+pop temp 0
+push local 2
+call Start.dispose 1
+pop temp 0
+push constant 0
+return

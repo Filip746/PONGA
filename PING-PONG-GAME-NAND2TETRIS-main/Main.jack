@@ -1,0 +1,38 @@
+class Main
+{
+   function void main()
+   {  
+      var Game game;
+      var Start s;
+      var Start l;
+      var char key;
+      var boolean st;
+      let st=true;
+      let s= Start.new();
+      while (st)
+      {
+         let key=Keyboard.keyPressed();
+         if(key=129)
+         {   
+            do Screen.clearScreen(); 
+            do s.dispose();          
+            let s=Start.new(); 
+
+         }
+         else    
+         {
+            if(key=32)	 
+            {
+               do Screen.clearScreen(); 
+               do game.newInstance();
+               let game=Game.getInstance();
+               do game.run();
+               do game.dispose();
+            }
+         }
+      }
+      do s.dispose();
+      do l.dispose();
+      return;
+   }
+}

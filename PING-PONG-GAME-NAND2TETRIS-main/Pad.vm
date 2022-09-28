@@ -1,0 +1,219 @@
+function Pad.new 0
+push constant 5
+call Memory.alloc 1
+pop pointer 0
+push argument 0
+pop this 0
+push argument 1
+pop this 1
+push argument 2
+pop this 2
+push argument 3
+pop this 3
+push constant 2
+pop this 4
+push pointer 0
+call Pad.show 1
+pop temp 0
+push pointer 0
+return
+function Pad.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return
+function Pad.show 0
+push argument 0
+pop pointer 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 0
+push this 1
+push this 0
+push this 2
+add
+push this 1
+push this 3
+add
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return
+function Pad.hide 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push this 1
+push this 0
+push this 2
+add
+push this 1
+push this 3
+add
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return
+function Pad.setDirection 0
+push argument 0
+pop pointer 0
+push argument 1
+pop this 4
+push constant 0
+return
+function Pad.getLeft 0
+push argument 0
+pop pointer 0
+push this 0
+return
+function Pad.getTop 0
+push argument 0
+pop pointer 0
+push this 1
+return
+function Pad.getBottom 0
+push argument 0
+pop pointer 0
+push this 1
+push this 3
+add
+return
+function Pad.setWidth 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Pad.hide 1
+pop temp 0
+push argument 1
+pop this 3
+push pointer 0
+call Pad.show 1
+pop temp 0
+push constant 0
+return
+function Pad.getWidth 0
+push argument 0
+pop pointer 0
+push this 2
+return
+function Pad.getRight 0
+push argument 0
+pop pointer 0
+push this 0
+push this 2
+add
+return
+function Pad.move 0
+push argument 0
+pop pointer 0
+push this 4
+push constant 2
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 1
+push constant 4
+add
+pop this 1
+push this 1
+push this 3
+add
+push constant 255
+gt
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 255
+push this 3
+sub
+pop this 1
+label IF_FALSE1
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push this 1
+push constant 4
+sub
+push this 0
+push this 2
+add
+push this 1
+push this 3
+add
+push constant 4
+sub
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 0
+push this 1
+push this 0
+push this 2
+add
+push this 1
+push this 3
+add
+call Screen.drawRectangle 4
+pop temp 0
+goto IF_END0
+label IF_FALSE0
+push this 1
+push constant 4
+sub
+pop this 1
+push this 1
+push constant 42
+lt
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push constant 43
+pop this 1
+label IF_FALSE2
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 0
+push this 1
+push constant 4
+add
+push this 0
+push this 2
+add
+push this 1
+push this 3
+add
+push constant 4
+add
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 0
+push this 1
+push this 0
+push this 2
+add
+push this 1
+push this 3
+add
+call Screen.drawRectangle 4
+pop temp 0
+label IF_END0
+push constant 0
+return
