@@ -1,0 +1,77 @@
+class Start {
+
+
+     field char key1, key2;      
+
+constructor Start new() {
+
+     let key1 = 62; 
+ 
+     let key2 = 45;
+
+     do Screen.setColor(true);
+
+     do Screen.drawRectangle( 0 , 0 ,4, 255);
+
+     do Screen.setColor(true);
+
+     do Screen.drawRectangle(  0, 0 , 511, 4 );
+
+     do Screen.setColor(true);
+
+     do Screen.drawRectangle( 507 , 0 , 511, 255);
+
+     do Screen.setColor(true);
+
+     do Screen.drawRectangle(  0, 251 , 511, 255 );
+
+	do Output.moveCursor(16 , 3);
+	
+	do Output.printString(" Left Player Controls  " );
+
+  do Screen.setColor( true);
+
+  do Output.moveCursor( 16, 36);
+
+  do Output.printString(" Right Player Controls " );
+
+  do Screen.setColor( true);
+
+  do Output.moveCursor(18 , 3);
+
+  do Output.printString("PRESS   W   TO  MOVE    UP");
+
+  do Output.moveCursor(19 , 3);
+
+  do Output.printString("PRESS   S   TO  MOVE   DOWN");
+
+  do Output.moveCursor(18 , 36);
+
+  do Output.printString("PRESS  UP  TO  MOVE   UP");
+
+  do Output.moveCursor(19 , 36);
+
+  do Output.printString("PRESS DOWN TO  MOVE  DOWN");
+
+
+
+     do Output.moveCursor(12 , 18) ;
+
+     do Output.printString(" Start Game  -  Press Space");
+
+     do Output.moveCursor(8 , 23) ;
+
+     do Output.printString(" <== Pong Game ==> " );
+
+     do Screen.setColor( true);
+
+     do Screen.drawRectangle( 175 , 104 , 332 , 105);
+
+	return  this;   
+}
+method void dispose()
+{  do Memory.deAlloc(this);
+   return;
+}
+
+} 
